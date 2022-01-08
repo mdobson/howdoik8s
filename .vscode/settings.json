@@ -1,6 +1,4 @@
 {
-    "eslint.workingDirectories": [
-      "apps/echo"
-    ]
-  }
-  
+  "eslint.workingDirectories": ["apps/echo"],
+  "git.enableCommitSigning": true
+}
