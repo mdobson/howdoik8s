@@ -1,9 +1,13 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Req } from '@nestjs/common';
+import { Request } from 'express';
+import { EchoService } from './echo.service';
 
 @Controller('/')
 export class EchoController {
+  constructor(private service: EchoService) {}
+
   @Get()
-  public echo() {
-    return 'echo';
+  public echo(@Req() req: Request) {
+    return this.service.getRequestInfo(req);
   }
 }
